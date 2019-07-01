@@ -118,7 +118,7 @@ $("#ploptions").append($("#shuffleplaylist"), $("#clearplaylist"), $("#getplayli
 $("#pldropdown").before($("#qlockbtn"));
 //channels
 
-$.getScript("//rawgit.com/sawwashere/CYTUBE-BABYMETAL/master/channels.js");
+$.getScript("//rawgit.com/Ownsin/Mytheme/master/channels.js");
 $.getScript("//rawgit.com/sawwashere/CYTUBE-BABYMETAL/master/overlay.js");
 
 $('#queuecontainer').hover(function(){
