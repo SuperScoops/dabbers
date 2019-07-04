@@ -28,8 +28,8 @@ $.getScript("//billtube.github.io/theme/overlay.js");
 $('head').append("<link rel='stylesheet' href='//billtube.github.io/theme/base.css' />");
 $('head').append("<link rel='stylesheet' href='//billtube.github.io/theme/polyzor.css' />");
 $("#videowrap").addClass("vjs-polyzor-skin");
-$(".server-msg-reconnect").addClass("fa fa-plug");
-$(".server-msg-reconnect").text("");
+//$(".server-msg-reconnect").addClass("fa fa-plug");
+$(".server-msg-reconnect").text("Connected");
 $("body").addClass("darktheme");
 $("#userlisttoggle").removeClass("glyphicon glyphicon-chevron-down pull-left pointer");
 $("#userlisttoggle").addClass("btn-default fa fa-users ch");
@@ -85,7 +85,6 @@ $("#pldropdown").after("<ul id='ploptions' class='dropdown-menu' role='menu'></u
 $("#ploptions").append($("#shuffleplaylist"), $("#clearplaylist"), $("#getplaylist"));
 $("#pldropdown").before($("#qlockbtn"));
 $("#main").after($("#scroll-feature"));
-$("<div class='indicator'><svg width='16px' height='12px'><polyline id='back' points='1 6 4 6 6 11 10 1 12 6 15 6'></polyline><polyline id='front' points='1 6 4 6 6 11 10 1 12 6 15 6'></polyline></svg></div>").appendTo('.navbar-header');
 $('#queuecontainer').hover(function(){
     $('#pllength').css({
         'opacity':'0.9',
