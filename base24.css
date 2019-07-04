@@ -286,7 +286,7 @@ width:100%;
 
 	}
 	#chatwrap {
-		height: calc(100% - 50px) !important;
+		height: calc(100% - 51px) !important;
 	}
 	#chatwrap {
 		float: right;
@@ -1655,7 +1655,7 @@ strong.username {
 }
 	.ch {
 	float: left;
-    padding: 8.5px 0px;
+    padding: 8px 0px;
     width: 33%;
     border: 0;
     outline: 0;
