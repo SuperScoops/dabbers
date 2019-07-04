@@ -24,21 +24,19 @@ console.log("sup yall");
 	!function(){this.ResizeSensor=function(e,t){function s(){this.q=[],this.add=function(e){this.q.push(e)};var e,t;this.call=function(){for(e=0,t=this.q.length;t>e;e++)this.q[e].call()}}function i(e,t){return e.currentStyle?e.currentStyle[t]:window.getComputedStyle?window.getComputedStyle(e,null).getPropertyValue(t):e.style[t]}function o(e,t){if(e.resizedAttached){if(e.resizedAttached)return void e.resizedAttached.add(t)}else e.resizedAttached=new s,e.resizedAttached.add(t);e.resizeSensor=document.createElement("div"),e.resizeSensor.className="resize-sensor";var o="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: scroll; z-index: -1; visibility: hidden;",n="position: absolute; left: 0; top: 0;";e.resizeSensor.style.cssText=o,e.resizeSensor.innerHTML='<div class="resize-sensor-expand" style="'+o+'"><div style="'+n+'"></div></div><div class="resize-sensor-shrink" style="'+o+'"><div style="'+n+' width: 200%; height: 200%"></div></div>',e.appendChild(e.resizeSensor),{fixed:1,absolute:1}[i(e,"position")]||(e.style.position="relative");var r,l,d=e.resizeSensor.childNodes[0],c=d.childNodes[0],h=e.resizeSensor.childNodes[1],a=(h.childNodes[0],function(){c.style.width=d.offsetWidth+10+"px",c.style.height=d.offsetHeight+10+"px",d.scrollLeft=d.scrollWidth,d.scrollTop=d.scrollHeight,h.scrollLeft=h.scrollWidth,h.scrollTop=h.scrollHeight,r=e.offsetWidth,l=e.offsetHeight});a();var f=function(){e.resizedAttached&&e.resizedAttached.call()},u=function(e,t,s){e.attachEvent?e.attachEvent("on"+t,s):e.addEventListener(t,s)},z=function(){(e.offsetWidth!=r||e.offsetHeight!=l)&&f(),a()};u(d,"scroll",z),u(h,"scroll",z)}var n=Object.prototype.toString.call(e),r="[object Array]"===n||"[object NodeList]"===n||"[object HTMLCollection]"===n||"undefined"!=typeof jQuery&&e instanceof jQuery||"undefined"!=typeof Elements&&e instanceof Elements;if(r)for(var l=0,d=e.length;d>l;l++)o(e[l],t);else o(e,t);this.detach=function(){if(r)for(var t=0,s=e.length;s>t;t++)ResizeSensor.detach(e[t]);else ResizeSensor.detach(e)}},this.ResizeSensor.detach=function(e){e.resizeSensor&&(e.removeChild(e.resizeSensor),delete e.resizeSensor,delete e.resizedAttached)}}();
 /*player skin*/
 
-$.getScript("//billtube.github.io/theme/overlay.js");
-$('head').append("<link rel='stylesheet' href='//billtube.github.io/theme/base.css' />");
-$('head').append("<link rel='stylesheet' href='//billtube.github.io/theme/polyzor.css' />");
+$.getScript("//cdn.jsdelivr.net/gh/superscoops/dabbers@master/overlay1.js");
+$('head').append("<link rel='stylesheet' href='//cdn.jsdelivr.net/gh/superscoops/fate-theme@master/polyzor.css' />");
 $("#videowrap").addClass("vjs-polyzor-skin");
-$(".server-msg-reconnect").addClass("fa fa-plug");
-$(".server-msg-reconnect").text("");
+//$(".server-msg-reconnect").addClass("fa fa-plug");
+$(".server-msg-reconnect").text("Connected");
 $("body").addClass("darktheme");
 $("#userlisttoggle").removeClass("glyphicon glyphicon-chevron-down pull-left pointer");
 $("#userlisttoggle").addClass("btn-default fa fa-users ch");
 $("#userlisttoggle").text("");
-$("#showchansettings").text("Admin Settings");
+$("#showchansettings").text("Channel Settings");
 $("#controlsrow").after($("#motdrow"));//move channel description (motd) below controls
 $("#controlsrow").after($("#announcements"));//move cytube announcements below controls
 $(".container-fluid").append($("#footer"));//move footer into mainpage element
-$('#footer').children('.container').append('<p class="text-muted credit">Copyrights and trademarks for the shows and other promotional materials are held by their respective owners and their use is allowed under the fair use clause of the Copyright Law. The author is not responsible for any contents linked or referred to from his pages, All CyTu.be does is link or embed content that was uploaded to popular Online Video hosting sites like Youtube.com / Google drive. All Google users signed a contract with the sites when they set up their accounts wich forces them not to upload illegal content.(<a href="https://www.lumendatabase.org/topics/14">DMCA Safe Harbor</a>)<h4><center><br>Theme By Bill</p>(<a href="https://github.com/BillTube/theme">Now on github!</a>)</center></h4>');
 $("#mainpage").prepend($("#chatwrap"));//move chat element outside left container
 $("#userlist").prepend("<div id='connected'></div>");//create div to contain user count
 $("#connected").append($("#usercount"));//move user count into previously created div
@@ -52,6 +50,7 @@ $("#headbottom").append("<button id='addmedia' title='Add Media' class='headbtn 
 $("#headbottom").append($("#newpollbtn"));
 $("#headbottom").append("<button id='morebtn' title='More Actions' data-toggle='dropdown' class='headbtn headbtnleft hide'></button>");
 $("#newpollbtn").addClass("headbtn headbtnleft");
+$("#newpollbtn").removeClass("btn btn-sm");
 $("#emotelistbtn").text("");
 $("#emotelistbtn").removeClass("btn btn-sm");
 $("#emotelistbtn").addClass("fa fa-picture-o");
@@ -77,6 +76,7 @@ $("#rightpane-inner").prepend("<div id='mediabuttons'></div>");
 $("#rightpane-inner").addClass("section");
 $("#mediarefresh").addClass("btn btn-sm btn-default OLB");
 $("#voteskip").addClass("btn btn-sm btn-default OLB");
+$("#voteskip").removeClass("btn btn-sm");
 $("#mediabuttons").append($("#showmediaurl"), $("#showcustomembed"), $("#showsearch"), $("#showplaylistmanager"));
 $("#rightpane").after("<div id='queuecontainer' class='section'><button id='pldropdown' data-toggle='dropdown' title='Playlist Options'></button><div class='textheader'><p id='upnext' class='sectionheader'>Up Next</p></div></div>");
 $("#queuecontainer").append($("#queue"));
@@ -85,7 +85,6 @@ $("#pldropdown").after("<ul id='ploptions' class='dropdown-menu' role='menu'></u
 $("#ploptions").append($("#shuffleplaylist"), $("#clearplaylist"), $("#getplaylist"));
 $("#pldropdown").before($("#qlockbtn"));
 $("#main").after($("#scroll-feature"));
-$("<div class='indicator'><svg width='16px' height='12px'><polyline id='back' points='1 6 4 6 6 11 10 1 12 6 15 6'></polyline><polyline id='front' points='1 6 4 6 6 11 10 1 12 6 15 6'></polyline></svg></div>").appendTo('.navbar-header');
 $('#queuecontainer').hover(function(){
     $('#pllength').css({
         'opacity':'0.9',
@@ -426,7 +425,7 @@ return div;
 }
 
 $(document).ready(function() {
-$('<link id="chanfavicon" href="//cdn1.imggmi.com/uploads/2019/6/3/531e108fc96b064296865f38e808c4b7-full.png" type="image/x-icon" rel="shortcut icon" />')
+$('<link id="chanfavicon" href="//raw.githubusercontent.com/SuperScoops/fate-theme/master/favicon.png" type="image/x-icon" rel="shortcut icon" />')
 .appendTo("head");});
 
 // The HorizontalScroller Class accepts a jQuery object as its only argument
@@ -672,10 +671,10 @@ function scrollerInit() {
   .on("click", function() {
 	scrollQueue();
   });
-$.getScript("//billtube.github.io/theme/channels.js");
-$.getScript("//dl.dropbox.com/s/posqswg5ib4pvd8/XaekaiModules.js");
-$.getScript("//dl.dropbox.com/s/x54i2a14jyt58uc/settings.js");
-$.getScript("//dl.dropbox.com/s/cbhvu7e4ezjd0qh/discord.js");
+
+$.getScript("//cdn.jsdelivr.net/gh/superscoops/fate-theme@master/XaekaiModules.js");
+$.getScript("//cdn.jsdelivr.net/gh/superscoops/fate-theme@master/settings.js");
+
 
 var LOADED = (typeof LOADED==="undefined") ? false : true;
 LOADED ? location.reload() : '';
@@ -686,7 +685,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-53755606-1', 'auto');
 ga('send', 'pageview');
 
-var bgColorArray = ['https://lh3.googleusercontent.com/W6-pKEkMeofa9Ykr9hAqXm6H0ioeb1LdEi-hwFAt25hCQnC8j6StVVUThqLNrSakrDWbnF7_yxtx8GamZg=w1578-h888-rw-no','https://lh3.googleusercontent.com/jPE8IJY02o_FoltR0PTwNKHLgGVPG9HQpq3dYfkblSQN07O9xfhfq_8ftYDhJhVRY7ecZTIrLcubopAfZQ=w1331-h888-rw-no','https://lh3.googleusercontent.com/uCEncyS9Zq89MQqSnkbi5SjKjIkzL_1T65YxDbVnFHry8k9d1AilBGYdfEizLTmmmHgW5FJL7vrZdMk63w=w950-h534-rw-no','https://lh3.googleusercontent.com/uuhmitjA-GDenaGzz_BrGy73PufMO0LKEFykw--EyItvYWJwvDzIdnO-vQi4QFM3GC-YiMxl2qJiAPA6oA=w950-h534-rw-no'],
+var bgColorArray = ['//i.ibb.co/GTfSQzd/image.png'],
 
 selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
 $('#backg').css('background', 'url(' + selectBG + ')')
@@ -706,3 +705,9 @@ var myElement = document.querySelector("#videowrap");
 myElement.style.display = "block";
 $("body").addClass('fluid');
 
+$("#usercount").text($("#usercount").text().replace(/users?/,'miimers'));
+if (typeof(_connectedUsers) == 'undefined') { _connectedUsers = Callbacks.usercount; }
+Callbacks.usercount = function(data) {//currently for debugging purposes only. Doesn't do anything.
+	_connectedUsers(data);
+	$("#usercount").text($("#usercount").text().replace(/users?/,'miimers'));
+}
